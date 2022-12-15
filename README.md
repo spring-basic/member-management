@@ -10,3 +10,8 @@
 - 회원 서비스 테스트
 ```
 
+### 🎄&nbsp;&nbsp;Member
+|이름|GitHub|
+|--|--|
+|[이현진](https://github.com/ramelHJ)| https://github.com/ramelHJ |
+|[이세진](https://github.com/tpwls9494)| https://github.com/tpwls9494 |
