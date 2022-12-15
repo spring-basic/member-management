@@ -15,3 +15,7 @@
 |--|--|
 |[이현진](https://github.com/ramelHJ)| https://github.com/ramelHJ |
 |[이세진](https://github.com/tpwls9494)| https://github.com/tpwls9494 |
+
+
+### ☃️&nbsp;&nbsp;참고
+- 커밋 메세지 작성 요령 https://gist.github.com/stephenparish/9941e89d80e2bc58a153
