@@ -6,6 +6,9 @@ import org.junit.jupiter.api.Test;
 import springbasic.membermanagement.domain.Member;
 import springbasic.membermanagement.repository.MemoryMemberRepository;
 
+import java.util.List;
+import java.util.Optional;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -57,10 +60,70 @@ class MemberServiceTest {
     }
 
     @Test
-    void findMembers() {
+    void 멤버_전체_조회() {
+        //given
+        Member member1 = new Member();
+        member1.setName("hyeonjin");
+        memberService.join(member1);
+
+        Member member2 = new Member();
+        member2.setName("sejin");
+        memberService.join(member2);
+
+        Member member3 = new Member();
+        member3.setName("youngjin");
+        memberService.join(member3);
+
+        //when
+        List<Member> result = memberService.findMembers();
+
+        //then
+        assertThat(result.size()).isEqualTo(3);
     }
 
     @Test
-    void findOne() {
+    void 멤버_조회_성공() {
+        //given
+        Member member1 = new Member();
+        member1.setName("hyeonjin");
+        memberService.join(member1);
+
+        Member member2 = new Member();
+        member2.setName("sejin");
+        memberService.join(member2);
+
+        Member member3 = new Member();
+        member3.setName("youngjin");
+        Long findId = memberService.join(member3);
+
+        //when
+        Optional<Member> result = memberService.findOne(findId);
+
+        //then
+        assertThat(result.get()).isEqualTo(member3);
+    }
+
+    @Test
+    void 멤버_조회_실패() {
+        //given
+        Member member1 = new Member();
+        member1.setName("hyeonjin");
+        memberService.join(member1);
+
+        Member member2 = new Member();
+        member2.setName("sejin");
+        memberService.join(member2);
+
+        Member member3 = new Member();
+        member3.setName("youngjin");
+        memberService.join(member3);
+
+        Long findId = 5L;
+
+        //when
+        Optional<Member> result = memberService.findOne(findId);
+
+        //then
+        assertThat(result.isEmpty()).isEqualTo(true);
     }
 }
