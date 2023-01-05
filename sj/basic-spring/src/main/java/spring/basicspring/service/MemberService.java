@@ -1,5 +1,6 @@
 package spring.basicspring.service;
 
+import org.springframework.stereotype.Service;
 import spring.basicspring.domain.Member;
 import spring.basicspring.repository.MemberRepository;
 
